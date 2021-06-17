@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Dogs</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row content">
+                    <h1 class="display-4">Shelter Dogs</h1>
+                </div>
+                <div class="row content table-responsive-md">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Breed</th>
+                                <th scope="col">Weight</th>
+                                <th scope="col">Spay/Neuter</th>
+                                <th scope="col">Arrived</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="dog : ${dogList}">
+                                <th scope="row" th:text="${dog.id}"></th>
+                                <td th:text="${dog.name}"></td>
+                                <td th:text="${dog.age}"></td>
+                                <td th:text="${dog.gender}"></td>
+                                <td th:text="${dog.breed}"></td>
+                                <td th:text="${dog.weight}"></td>
+                                <td th:text="${dog.sterilized}"></td>
+                                <td th:text="${dog.arrival}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
